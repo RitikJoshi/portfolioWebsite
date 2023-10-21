@@ -1,9 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import styles from "../styles/Home.module.css";
 import { Experience, PageInfo, Skill, Project, Social } from "../typings";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
@@ -17,7 +15,7 @@ import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Link from "next/link";
 import { HomeIcon } from "@heroicons/react/24/solid";
-import Script from "next/script";
+
 
 type Props = {
   pageInfo: PageInfo;
@@ -91,6 +89,14 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills = await fetchSkills();
   const projects = await fetchProjects();
   const socials = await fetchSocials();
+
+  // Check if any of the data is undefined and provide default values or handle it accordingly
+  if (!pageInfo || !experiences || !skills || !projects || !socials) {
+    // Handle the case where data is undefined, for example:
+    return {
+      notFound: true, // This will return a 404 page or an error page
+    };
+  }
 
   return {
     props: {
