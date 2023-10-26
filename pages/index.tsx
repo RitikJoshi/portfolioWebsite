@@ -33,7 +33,13 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       scrollbar-thumb-[#41B3C4]/80"
     >
       <Head>
-        <title>Ritik Joshi Portfolio</title>
+      <link
+          rel="icon"
+          type="image/png"
+          sizes="48x48"
+          href="/logo.png"
+        />
+        <title>{"Ritik's Portfolio"}</title>
       </Head>
 
       {/* Header */}
