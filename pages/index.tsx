@@ -28,8 +28,9 @@ type Props = {
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
     <div
-      className="bg-lightBackground text-darkBlack h-screen snap-y snap-mandatory
-    overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
+      className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
+      overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 
+      scrollbar-thumb-[#41B3C4]/80"
     >
       <Head>
         <title>Ritik Joshi Portfolio</title>
@@ -71,7 +72,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            <div className="h-10 w-10 bg-darkGreen/80 rounded-full flex items-center justify-center">
+            <div className="h-10 w-10 bg-[#41B3C4]/80 rounded-full flex items-center justify-center">
               <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-white animate-pulse" />
             </div>
           </div>
